@@ -1,4 +1,4 @@
 # hackaton
 small change here
 
-Hello Anes and Jesper!
+Hello Anes, Jesper and Marcel!
