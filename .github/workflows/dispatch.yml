@@ -1,0 +1,13 @@
+name: Dispatch
+on:
+  repository_dispatch: {}
+  push:
+    branches:
+      - ci/test
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.client_payload.event == 'check' }}
+    steps:
+      - run: echo "🐧 This job is now running ${{ toJson(github.event.client_payload) }}"
+      - run: "<Checkout and Publish change to GitHub from Gerrit>"
