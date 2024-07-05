@@ -12,11 +12,3 @@ jobs:
       - run: echo "🐧 This job is now running ${{ toJson(github.event.client_payload) }}"
 
 
-      - name: Create GitHub Issue
-        run: |
-          curl -X "POST" "https://api.github.com/repos/cariad-t2/ivi_cicd_config_v1/issues?state=all" \
-            -H "Cookie: logged_in=no" \
-            -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
-            -H "Content-Type: text/plain; charset=utf-8" \
-            -H "Accept: application/vnd.github+json" \
-            -d $'{"title": "request image", "body": "- branch: scout_demo_a14\\n- manifest: scout_OIA_emulator\\n- target: OIA__SC_MRM_X__E-userdebug\\n- create_image: true\\n- clean_build: false\\n- env_prefix: dev-main"}'
